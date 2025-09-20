@@ -9,7 +9,7 @@ import rehypeImage from "./rehype-image.js";
 
 const DEFAULT_FORMAT = "YYYY/MM/DD";
 const WEEKLY_REPO_NAME = "zhonghaibin/iweekly";
-const START_DATE = "2022-10-10";
+const START_DATE = "2025-09-20";
 
 function formatDate(date) {
   return dayjs(date).format(DEFAULT_FORMAT);
