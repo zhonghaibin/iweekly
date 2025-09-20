@@ -9,7 +9,7 @@ import rehypeImage from "./rehype-image.js";
 
 const DEFAULT_FORMAT = "YYYY/MM/DD";
 const WEEKLY_REPO_NAME = "zhonghaibin/iweekly";
-const START_DATE = "2025-09-20";
+const START_DATE = "2025-09-27";
 
 function formatDate(date) {
   return dayjs(date).format(DEFAULT_FORMAT);
@@ -21,7 +21,7 @@ function getFileCreateDate(filePath) {
 
 function getWeeklyDate(num) {
   return num < 100
-    ? formatDate(dayjs(START_DATE).subtract(100 - num, "week"))
+    ? formatDate(dayjs(START_DATE).subtract( num, "week"))
     : getFileCreateDate(filePath);
 }
 
