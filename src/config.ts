@@ -7,6 +7,7 @@ export const SITE = {
   siteImage: "https://piwigo.dpdns.org/upload/2025/09/20/20250920151144-fb25c029.jpg",
   homePage: "https://iweekly.dpdns.org",
   blogPage: "https://zhonghaibin.dpdns.org/",
+  ForumPage: "https://vmoex.dpdns.org/",
   photoPage: "https://piwigo.dpdns.org/",
   githubId: "zhonghaibin",
   repo: "zhonghaibin/iweekly",
