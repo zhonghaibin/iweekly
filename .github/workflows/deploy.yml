@@ -21,12 +21,34 @@ jobs:
           npm install
           npm run build 
 
-      - name: Deploy to server
+      - name: Compress build files
+        run: |
+          cd dist
+          tar -czf ../dist.tar.gz ./*
+          cd ..
+          ls -lh dist.tar.gz
+
+      - name: Deploy compressed file
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
-          source: "dist/*"
-          target: ${{ secrets.DEPLOY_DIR }}
+          source: "dist.tar.gz"
+          target: "/tmp/"
+
+      - name: Extract and deploy on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            echo "开始解压部署..."
+            rm -rf {{ secrets.DEPLOY_DIR }}/*
+            tar -xzf /tmp/dist.tar.gz -C {{ secrets.DEPLOY_DIR }}
+            rm -f /tmp/dist.tar.gz
+            chmod -R 755 {{ secrets.DEPLOY_DIR }}
+            echo "部署完成！"
