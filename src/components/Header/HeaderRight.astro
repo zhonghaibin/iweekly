@@ -10,7 +10,7 @@ const { blogPage,ForumPage,photoPage,githubId } = SITE;
   <Search />
   <HeaderLink href={blogPage} target='_blank'>Blog</HeaderLink>
   <HeaderLink href={ForumPage} target='_blank'>Forum</HeaderLink>
-  <HeaderLink href={photoPage} target='_blank'>Photo</HeaderLink>
+  <HeaderLink href={photoPage} target='_blank' class='lg:inline-block hidden'>Photo</HeaderLink>
   <HeaderLink href={`https://github.com/${githubId}`} target='_blank' class='lg:inline-block hidden'>GitHub</HeaderLink>
   <HeaderLink href='/rss.xml' target='_blank' class='lg:inline-block hidden'>RSS</HeaderLink>
 </div>
