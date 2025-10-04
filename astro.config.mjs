@@ -21,7 +21,7 @@ function getFileCreateDate(filePath) {
 
 function getWeeklyDate(num) {
   return num < 100
-    ? formatDate(dayjs(START_DATE).subtract( num, "week"))
+    ? formatDate(dayjs(START_DATE).subtract(100 - num, "week"))
     : getFileCreateDate(filePath);
 }
 
@@ -48,11 +48,12 @@ function defaultLayoutPlugin() {
     frontmatter.image = frontmatter.image || SITE.image;
 
     if (!frontmatter.date) {
-      const postNumber = filePath.split(/[\/\\]posts[\/\\]/)[1]?.split("-")[0];
+      // const postNumber = filePath.split(/[\/\\]posts[\/\\]/)[1]?.split("-")[0];
       frontmatter.date =
-        SITE.repo === WEEKLY_REPO_NAME
-          ? getWeeklyDate(postNumber)
-          : getFileCreateDate(filePath);
+        // SITE.repo === WEEKLY_REPO_NAME
+        //   ? getWeeklyDate(postNumber)
+        //   :
+      getFileCreateDate(filePath);
     }
 
     if (SITE.repo === WEEKLY_REPO_NAME) {
