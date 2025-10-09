@@ -1,14 +1,8 @@
 [
   {
-    "num": 2,
+    "num": 1,
     "title": "江畔景致",
-    "url": "https://iweekly.dpdns.org/posts/02-江畔景致",
+    "url": "https://iweekly.dpdns.org/posts/01-江畔景致",
     "pic": "https://piwigo.dpdns.org/_data/i/upload/2025/10/04/20251004091138-c9e9bf78-xx.jpg"
   },
-  {
-    "num": 1,
-    "title": "HelloWorld",
-    "url": "https://iweekly.dpdns.org/posts/01-HelloWorld",
-    "pic": "https://piwigo.dpdns.org/_data/i/upload/2025/09/20/20250920153149-8aeebe88-xx.jpg"
-  }
 ]
